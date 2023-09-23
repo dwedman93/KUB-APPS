@@ -1,0 +1,17 @@
+deployments:
+  - name: "k8s-example-user-code-1"
+    image:
+      repository: "docker.io/dagster/user-code-example"
+      tag: "1.0.9"
+      pullPolicy: "IfNotPresent"
+    dagsterApiGrpcArgs:
+      - "-f"
+      - "/example_project/example_repo/repo.py"
+    port: 3030
+    resources:
+      requests:
+        cpu: "250m"
+        memory: "500Mi"
+      limits:
+        cpu: "250m"
+        memory: "500Mi"s

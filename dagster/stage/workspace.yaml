@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dagster-workspace
+  namespace: dagster-stage
+data:
+  workspace.yaml: |
+    load_from:
+      - grpc_server:
+          location_name: "dagster_main"
+          host: "dagster_main_stage"
+          port: 3030
+          

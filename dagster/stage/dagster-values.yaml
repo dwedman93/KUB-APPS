@@ -1,0 +1,19 @@
+dagsterWebserver:
+  workspace:
+    enabled: true
+    servers: []
+    externalConfigmap: "dagster-workspace"
+
+dagster-user-deployments:
+  enabled: true
+  enableSubchart: false
+
+
+
+postgresql:
+  enabled: false
+  postgresqlScheme: "postgresql"
+  postgresqlHost: db-server
+  postgresqlUsername: dagster_user
+  postgresqlDatabase: dagster_db_stage
+  postgresqlPassword: dagster
